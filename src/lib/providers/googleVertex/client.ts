@@ -1882,9 +1882,12 @@ export class GoogleVertexProvider extends BaseProvider {
       config.systemInstruction = effectiveSystemPrompt;
     }
 
-    // Add thinking config for Gemini 3
+    // Add thinking config. Gemini 3 takes `thinkingLevel` directly; Gemini
+    // 2.5 rejects that field and needs a translated `thinkingBudget` instead
+    // — createNativeThinkingConfig picks the wire shape from modelName.
     const nativeThinkingConfig = createNativeThinkingConfig(
       options.thinkingConfig,
+      modelName,
     );
     if (nativeThinkingConfig) {
       config.thinkingConfig = nativeThinkingConfig;
@@ -2921,9 +2924,12 @@ export class GoogleVertexProvider extends BaseProvider {
       config.systemInstruction = effectiveSystemPrompt;
     }
 
-    // Add thinking config for Gemini 3
+    // Add thinking config. Gemini 3 takes `thinkingLevel` directly; Gemini
+    // 2.5 rejects that field and needs a translated `thinkingBudget` instead
+    // — createNativeThinkingConfig picks the wire shape from modelName.
     const nativeThinkingConfig2 = createNativeThinkingConfig(
       options.thinkingConfig,
+      modelName,
     );
     if (nativeThinkingConfig2) {
       config.thinkingConfig = nativeThinkingConfig2;
