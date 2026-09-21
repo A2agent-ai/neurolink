@@ -1,5 +1,6 @@
 // GENERATED FILE — do not edit. Regenerate with `pnpm run codegen:catalog`.
 export type CatalogProviderName =
+  | "a2agent"
   | "api-route"
   | "baseten"
   | "cerebras"
@@ -17,6 +18,7 @@ export type CatalogProviderName =
   | "upstage"
   | "xai";
 export type CatalogCredentialKey =
+  | "a2agent"
   | "apiRoute"
   | "baseten"
   | "cerebras"
